@@ -66,7 +66,7 @@ public NavigableSet<K> navigableKeySet() {
 }
 
 ```
-위에 있는 코드는 실제로 java의 TreeMap과 HashMap에서 keySet이다. keySey을 호출할 때마다 새로운 Set을 생성하는 것이 아닌, Set에 대한 view를 반환한다. (Returns:
+위에 있는 코드는 실제로 java의 TreeMap과 HashMap에서 keySet이다. keySet을 호출할 때마다 새로운 Set을 생성하는 것이 아닌, Set에 대한 view를 반환한다. (Returns:
 a set view of the keys contained in this map라고 적혀 있다.) </br>
 이 상황에서도 반환된 인스턴스의 기능들이 모두 같기 때문에 하나를 수정하면 다른 모든 객체가 따라서 바뀐다. 따라서 keySet이 뷰 객체를 여러 개 만들어도 상관은 없지만 그럴 필요가 없는 것이다.
 
@@ -84,7 +84,7 @@ private static long sum() {
 ```
 위 코드는 모든 int 범위 정수의 합을 구하는 메서드로, int로는 부족하니 long을 사용하고 있다. 
 답은 정확하게 나오지만 제대로 구현했을 때보다 훨씬 느리다. </br>
-sum 변수를 long이 아닌 Long으로 선언하여 불필요한 Long 인스턴스가 약 231개 만들어졌다.
+sum 변수를 long이 아닌 Long으로 선언하여 불필요한 Long 인스턴스가 약 $2^{31}$개 만들어졌다.
 sum의 타입을 long으로만 변경해줘도 속도가 약 1/10 이상으로 줄어든다.
 박싱된 기본 타입보다는 기본 타입을 사용하고 의도치 않은 오토박싱을 주의하자.
 
